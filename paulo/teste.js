@@ -1,5 +1,5 @@
 
-        // SPAM DE IF E ELSE E OUTRAS COISAS DESNECESSARIAS
+        // Se achou o codigo ruim vai dar esse seu bumbum guloso
         const button = document.querySelector("button");
         const p = document.querySelector("p");
         const aleatorio = document.querySelector("#aleatorio")
