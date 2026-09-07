@@ -1,11 +1,12 @@
 const button = document.querySelector("button");
 const p = document.querySelector("p");
 const aleatorio = document.querySelector("#aleatorio");
-const jogador = document.querySelector("input").value.toLowerCase();
-const escolhas = ["pedra", "papel", "tesoura"];
-const cpu = escolhas[Math.floor(Math.random() * escolhas.length)];
 
 function iniciar() {
+  const jogador = document.querySelector("input").value.toLowerCase();
+  const escolhas = ["pedra", "papel", "tesoura"];
+  const cpu = escolhas[Math.floor(Math.random() * escolhas.length)];
+  
   class Jogadas {
     analisar(jogador, cpu) {
       if (jogador === "pedra" || jogador === "tesoura" || jogador === "papel") {
@@ -73,9 +74,6 @@ button.onclick = () => {
   ativado = true;
   spam();
 };
-
-
-
 
 // Aura + Ego
 const button2 = document.querySelector("#meme");
