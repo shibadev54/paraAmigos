@@ -1,3 +1,5 @@
+
+        // SPAM DE IF E ELSE E OUTRAS COISAS DESNECESSARIAS
         const button = document.querySelector("button");
         const p = document.querySelector("p");
         const aleatorio = document.querySelector("#aleatorio")
