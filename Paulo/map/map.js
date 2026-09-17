@@ -1,5 +1,3 @@
-
-
 const produtos = [
   {
     id: 1,
@@ -82,7 +80,12 @@ const novosProdutos = produtos.map((produto) => {
   return {
     id: produto.id,
     nome: produto.nome,
-    preco: novoPreco.toFixed(2),
+    
+    preco: novoPreco.toLocaleString('pt-br', {
+        style: 'currency',
+        currency: 'BRL'
+    }),
+
     quantidade: produto.quantidade,
   };
 });
