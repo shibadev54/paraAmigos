@@ -72,11 +72,11 @@ const produtos = [
 ];
 
 const novosProdutos = produtos.map((produto) => {
-    // ? if
-    // : else
+    // ? se for verdadeiro
+    // : se for falso
   const novoPreco = produto.temDesconto ? produto.preco * 0.9 : produto.preco;
 
-    // Retorna id, nome, preço atualizado caso o desconto seja true e quantidade
+    // Retorna um novo objeto com id, nome, preço atualizado e quantidade
   return {
     id: produto.id,
     nome: produto.nome,
