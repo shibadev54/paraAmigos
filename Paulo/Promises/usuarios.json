@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "nome": "Paulo Eduardo",
+    "idade": 16,
+    "infoPessoal": {
+      "cpf": "123.456.80",
+      "endereco": {
+        "rua": "Dos bobos",
+        "numero": 0
+      }
+    }
+  },
+  {
+    "id": 2,
+    "nome": "Miguel Augusto",
+    "idade": 15,
+    "infoPessoal": {
+      "cpf": "234.542.23",
+      "endereco": {
+        "rua": "das pedras",
+        "numero": 2
+      }
+    }
+  },
+  {
+    "id": 3,
+    "nome": "Paulo Eduardo",
+    "idade": 16,
+    "infoPessoal": {
+      "cpf": "123.456.80",
+      "endereco": {
+        "rua": "Dos bobos",
+        "numero": 0
+      }
+    }
+  },
+  {
+    "id": 4,
+    "nome": "Ana Beatriz",
+    "idade": 17,
+    "infoPessoal": {
+      "cpf": "345.678.90",
+      "endereco": {
+        "rua": "das Flores",
+        "numero": 12
+      }
+    }
+  },
+  {
+    "id": 5,
+    "nome": "Lucas Ferreira",
+    "idade": 18,
+    "infoPessoal": {
+      "cpf": "456.789.01",
+      "endereco": {
+        "rua": "São João",
+        "numero": 45
+      }
+    }
+  },
+  {
+    "id": 6,
+    "nome": "Mariana Silva",
+    "idade": 14,
+    "infoPessoal": {
+      "cpf": "567.890.12",
+      "endereco": {
+        "rua": "das Acácias",
+        "numero": 7
+      }
+    }
+  },
+  {
+    "id": 7,
+    "nome": "Rafael Costa",
+    "idade": 19,
+    "infoPessoal": {
+      "cpf": "678.901.23",
+      "endereco": {
+        "rua": "Boa Vista",
+        "numero": 100
+      }
+    }
+  },
+  {
+    "id": 8,
+    "nome": "Juliana Rocha",
+    "idade": 16,
+    "infoPessoal": {
+      "cpf": "789.012.34",
+      "endereco": {
+        "rua": "das Palmeiras",
+        "numero": 23
+      }
+    }
+  },
+  {
+    "id": 9,
+    "nome": "Gabriel Souza",
+    "idade": 15,
+    "infoPessoal": {
+      "cpf": "890.123.45",
+      "endereco": {
+        "rua": "Santos Dumont",
+        "numero": 8
+      }
+    }
+  },
+  {
+    "id": 10,
+    "nome": "Camila Almeida",
+    "idade": 17,
+    "infoPessoal": {
+      "cpf": "901.234.56",
+      "endereco": {
+        "rua": "das Laranjeiras",
+        "numero": 33
+      }
+    }
+  }
+]
