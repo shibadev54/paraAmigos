@@ -1,0 +1,9 @@
+#resultado {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+p {
+  font-size: 19px;
+}
