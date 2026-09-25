@@ -5,32 +5,36 @@ const buscarTodosUsuarios = document.getElementById("buscarTodosUsuarios");
 const resultado = document.getElementById("resultado");
 
 async function buscarDados() {
-  const idUsuario = Number(document.getElementById("idUsuario").value);
+  try {
+    const idUsuario = Number(document.getElementById("idUsuario").value);
 
-  if (idUsuario == "") {
-    resultado.innerHTML = "Digite um id";
+    if (idUsuario == "") {
+      resultado.innerHTML = "Digite um id";
 
-    return;
-  }
-  const resposta = await fetch(
-    "https://raw.githubusercontent.com/shibadev54/paraAmigos/refs/heads/main/Paulo/Promises/usuarios.json",
-  );
+      return;
+    }
+    const resposta = await fetch(
+      "https://raw.githubusercontent.com/shibadev54/paraAmigos/refs/heads/main/Paulo/Promises/usuarios.json",
+    );
 
-  if (!resposta.ok) {
-    resultado.innerHTML = new Error(`HTTP: ${resposta.status}`);
-  }
+    if (!resposta.ok) {
+      throw new Error(`HTTP: ${resposta.status}`);
+    }
 
-  const dados = await resposta.json();
+    const dados = await resposta.json();
 
-  const procurarUsuario = dados.find((item) => item.id === idUsuario);
+    const procurarUsuario = dados.find((item) => item.id === idUsuario);
 
-  if (procurarUsuario !== undefined) {
-    return {
-      id: idUsuario,
-      usuario: procurarUsuario,
-    };
-  } else {
-    resultado.innerHTML = "Nenhum usuario foi encontrado"
+    if (procurarUsuario !== undefined) {
+      return {
+        id: idUsuario,
+        usuario: procurarUsuario,
+      };
+    } else {
+      resultado.innerHTML = "Nenhum usuario foi encontrado";
+    }
+  } catch (erro) {
+    resultado.innerHTML = erro.message;
   }
 }
 
