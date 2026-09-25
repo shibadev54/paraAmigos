@@ -1,38 +1,54 @@
-// Ainda faltar terminar e melhorar algumas coisas
-
 const buscar = document.getElementById("buscarUsuario");
 const buscarTodosUsuarios = document.getElementById("buscarTodosUsuarios");
 const resultado = document.getElementById("resultado");
 
 async function buscarDados() {
   try {
-    const idUsuario = Number(document.getElementById("idUsuario").value);
+    const usuarioID = Number(document.getElementById("idUsuario").value);
 
-    if (idUsuario == "") {
-      resultado.innerHTML = "Digite um id";
+    if (usuarioID == "") {
+      resultado.innerHTML = "Insira o userid";
 
       return;
     }
+
     const resposta = await fetch(
-      "https://raw.githubusercontent.com/shibadev54/paraAmigos/refs/heads/main/Paulo/Promises/usuarios.json",
+      "https://raw.githubusercontent.com/shibadev54/paraAmigos/refs/heads/main/Paulo/Promises/usuarios.json"
     );
 
     if (!resposta.ok) {
       throw new Error(`HTTP: ${resposta.status}`);
     }
-
     const dados = await resposta.json();
 
-    const procurarUsuario = dados.find((item) => item.id === idUsuario);
+    const verificarUsuario = dados.find((item) => item.id === usuarioID);
 
-    if (procurarUsuario !== undefined) {
+    if (verificarUsuario !== undefined) {
       return {
-        id: idUsuario,
-        usuario: procurarUsuario,
+        id: usuarioID,
+        usuario: verificarUsuario,
       };
     } else {
-      resultado.innerHTML = "Nenhum usuario foi encontrado";
+      resultado.innerHTML = "usuario não existe";
     }
+  } catch (erro) {
+    resultado.innerHTML = erro.message;
+  }
+}
+
+async function buscarTodosDados() {
+  try {
+    const resposta = await fetch(
+      "https://raw.githubusercontent.com/shibadev54/paraAmigos/refs/heads/main/Paulo/Promises/usuarios.json"
+    );
+
+    if (!resposta.ok) {
+      throw new Error(`HTTP: ${resposta.status}`);
+    }
+    const dados = await resposta.json()
+
+    return dados;
+    
   } catch (erro) {
     resultado.innerHTML = erro.message;
   }
@@ -58,27 +74,17 @@ buscar.addEventListener("click", () => {
 });
 
 buscarTodosUsuarios.addEventListener("click", () => {
-  try {
-    async function todosUsuarios() {
-      const resposta = await fetch(
-        "https://raw.githubusercontent.com/shibadev54/paraAmigos/refs/heads/main/Paulo/Promises/usuarios.json",
-      );
-
-      const dados = await resposta.json();
-
-      resultado.innerHTML = dados
-        .map(
-          (usuario) => `
-   <div>
-    <h2>ID: ${usuario.id}</h2>
-    <p>Nome ${usuario.nome}</p>
-  </div>
-  `,
-        )
-        .join("");
-    }
-    todosUsuarios();
-  } catch (erro) {
-    resultado.innerHTML = erro.message;
-  }
+  buscarTodosDados().then((dados) => {
+    resultado.innerHTML = dados
+      .map(
+        (usuario) =>
+          `
+      <div>
+        <h2>ID: ${usuario.id}</h2>
+        <p>Nome: ${usuario.nome}</p>
+      </div>
+      `
+      )
+      .join("");
+  });
 });
